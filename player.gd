@@ -6,46 +6,71 @@ const speed = 100
 
 var input = Vector2.ZERO
 var direction = "down"
+var attacking = false 
+
+func _ready():
+	# Signal für das Ende der Animation verbinden
+	animated_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
 func _physics_process(delta):
 	input.x = Input.get_axis("left","right")
 	input.y = Input.get_axis("up","down")
 	
-	if input:
+	if input and !attacking:
 		velocity = input * speed
 	else:
 		velocity = Vector2.ZERO
-	animate()
+	
+	if Input.is_action_just_pressed("attack") and !attacking:
+		attack()
+	
+	if !attacking:
+		animate()
+	
 	move_and_slide()
 
 func animate():
-	input = get_input()
 	if input.x == 0 and input.y == 0:
 		play_idle()
-	if input.x == 0 and input.y == 1:
+	elif input.x == 0 and input.y > 0:
 		animated_sprite.play("run_down")
 		direction = "down"
-	if input.x == 0 and input.y == -1:
+	elif input.x == 0 and input.y < 0:
 		animated_sprite.play("run_up")
 		direction = "up"
-	if input.x == 1 and input.y == 0:
+	elif input.x > 0 and input.y == 0:
 		animated_sprite.play("run_right")
 		direction = "right"
-	if input.x == -1 and input.y == 0:
+	elif input.x < 0 and input.y == 0:
 		animated_sprite.play("run_left")
 		direction = "left"
 
-func play_idle():
-	if direction == "down":
-		animated_sprite.play("idle_down")
-	if direction == "up":
-		animated_sprite.play("idle_up")
-	if direction == "left":
-		animated_sprite.play("idle_left")
-	if direction == "right":
-		animated_sprite.play("idle_right")
+func attack():
+	attacking = true
+	match direction:
+		"down":
+			animated_sprite.play("attack_down")
+		"up":
+			animated_sprite.play("attack_up")
+		"left":
+			animated_sprite.play("attack_left")
+		"right":
+			animated_sprite.play("attack_right")
 
-func get_input():
-	input.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
-	input.y = int(Input.is_action_pressed("down")) - int(Input.is_action_pressed("up"))
-	return input
+func play_idle():
+	match direction:
+		"down":
+			animated_sprite.play("idle_down")
+		"up":
+			animated_sprite.play("idle_up")
+		"left":
+			animated_sprite.play("idle_left")
+		"right":
+			animated_sprite.play("idle_right")
+
+func _on_animation_finished():
+	attacking = false
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	pass # Replace with function body.
