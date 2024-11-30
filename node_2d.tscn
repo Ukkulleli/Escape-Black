@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://c0i0a6sjxpqvm"]
+[gd_scene load_steps=49 format=4 uid="uid://c0i0a6sjxpqvm"]
 
 [ext_resource type="Texture2D" uid="uid://cjycevwd2we2a" path="res://basic_tileset_and_assets_standard/terrain_tiles_v2.png" id="1_4v6gt"]
 [ext_resource type="Script" path="res://player.gd" id="1_nm3hq"]
@@ -1303,43 +1303,6 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="Animation" id="Animation_41h22"]
-resource_name = "idle_down"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.733333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_82n8l"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ojs22"]
-_data = {
-"RESET": SubResource("Animation_82n8l"),
-"idle_down": SubResource("Animation_41h22")
-}
-
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -1358,26 +1321,14 @@ shape = SubResource("RectangleShape2D_86twt")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
 sprite_frames = SubResource("SpriteFrames_7kvcq")
 animation = &"idle_right"
-frame_progress = 0.259015
+frame_progress = 0.443833
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 
 [node name="world border" type="StaticBody2D" parent="."]
-position = Vector2(16, 0)
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world border"]
 polygon = PackedVector2Array(-152, -112, -192, -112, -192, 272, 272, 272, 272, -112, -144, -112, -144, -128, 288, -128, 288, 288, -208, 288, -208, -128, -152, -128, -144, -112, -144, -112)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(121.5, 0)
-scale = Vector2(1, 0.955)
-texture = ExtResource("3_5ghma")
-hframes = 4
-vframes = 4
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
-libraries = {
-"": SubResource("AnimationLibrary_ojs22")
-}
