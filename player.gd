@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
 
+
 const speed = 100
 
 var input = Vector2.ZERO
@@ -11,6 +12,8 @@ var attacking = false
 func _ready():
 	# Signal für das Ende der Animation verbinden
 	animated_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
+	print("Position: ",position)
+	print(self.get_path())
 
 func _physics_process(delta):
 	input.x = Input.get_axis("left","right")
@@ -74,6 +77,9 @@ func _on_animation_finished():
 func test():
 	#get_tree().change_scene_to_file()
 	pass
+
+func get_character_position() -> Vector2:
+	return self.position
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	pass # Replace with function body.
