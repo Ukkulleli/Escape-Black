@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
 
-
 const speed = 100
 
 var input = Vector2.ZERO
@@ -12,24 +11,27 @@ var attacking = false
 func _ready():
 	# Signal für das Ende der Animation verbinden
 	animated_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
-	print("Position: ",position)
-	print(self.get_path())
 
 func _physics_process(delta):
+	# Erstellt einen Vektor, der die Tastatureingaben darstellt
 	input.x = Input.get_axis("left","right")
 	input.y = Input.get_axis("up","down")
 	
+	# Falls gerade nicht angegriffen wird und eine Taste gerückt wird
 	if input and !attacking:
 		velocity = input * speed
 	else:
 		velocity = Vector2.ZERO
 	
+	# Wenn Leertaste gedrückt wird, und ma gerade nicht angreift, wird angegriffen
 	if Input.is_action_just_pressed("attack") and !attacking:
 		attack()
 	
+	# Wenn man gerade nicht angreift, wird die Animation für Laufen oder Stehen abgespielt
 	if !attacking:
 		animate()
 	
+	# Bewegung wird ausgeführt
 	move_and_slide()
 
 func animate():
@@ -80,9 +82,3 @@ func test():
 
 func get_character_position() -> Vector2:
 	return self.position
-
-func _on_animated_sprite_2d_animation_finished() -> void:
-	pass # Replace with function body.
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
