@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b44hoat01rbw8"]
+
+[ext_resource type="Script" path="res://start_screen.gd" id="1_vq4oq"]
+[ext_resource type="Texture2D" uid="uid://dabsmtpmxynig" path="res://Screenshot 2024-12-01 161656.png" id="2_bj3gq"]
+
+[node name="Start Screen" type="Node2D"]
+script = ExtResource("1_vq4oq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575.75, 322.5)
+scale = Vector2(0.776683, 0.759479)
+texture = ExtResource("2_bj3gq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 322)

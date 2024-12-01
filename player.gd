@@ -71,6 +71,12 @@ func play_idle():
 func _on_animation_finished():
 	attacking = false
 
+func test():
+	#get_tree().change_scene_to_file()
+	pass
 
 func _on_animated_sprite_2d_animation_finished() -> void:
+	pass # Replace with function body.
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
 	pass # Replace with function body.
