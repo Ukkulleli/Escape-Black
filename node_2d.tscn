@@ -1739,8 +1739,9 @@ script = ExtResource("6_4uuc4")
 position = Vector2(-2.38419e-07, 0)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_oslva")
-animation = &"walk"
-frame_progress = 0.875734
+animation = &"sit"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chicken"]
 position = Vector2(1.5, 3.5)
