@@ -13,3 +13,18 @@ texture = ExtResource("2_bj3gq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 322)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 495.0
+offset_top = 388.0
+offset_right = 743.0
+offset_bottom = 420.0
+color = Color(0, 0, 0, 0.6)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 495.0
+offset_top = 391.0
+offset_right = 739.0
+offset_bottom = 416.0
+text = "Drücke Leertaste zum Spielen"
+horizontal_alignment = 1
