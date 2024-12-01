@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bica6dd3ev0q3"
-path="res://.godot/imported/Chicken_Sprite_Sheet_Black.png-3c5c0a6ce2005a07e4193c92161235ea.ctex"
+path="res://.godot/imported/Chicken_Sprite_Sheet_Black.png-cc865318676f5b2429346a68be21a2d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Chicken_Sprite_Sheet_Black.png"
-dest_files=["res://.godot/imported/Chicken_Sprite_Sheet_Black.png-3c5c0a6ce2005a07e4193c92161235ea.ctex"]
+source_file="res://Enemies/Chicken_Sprite_Sheet_Black.png"
+dest_files=["res://.godot/imported/Chicken_Sprite_Sheet_Black.png-cc865318676f5b2429346a68be21a2d1.ctex"]
 
 [params]
 
