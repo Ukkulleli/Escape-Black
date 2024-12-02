@@ -19,5 +19,6 @@ func _process(delta):
 			progress += 1
 			await get_tree().create_timer(0.05).timeout
 		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_file("res://node_2d.tscn")
+		if get_tree() != null:
+			get_tree().change_scene_to_file("res://node_2d.tscn")
 	
