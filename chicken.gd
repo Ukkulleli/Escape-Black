@@ -2,8 +2,10 @@ extends CharacterBody2D
 
 @onready var player = get_node("/root/Node2D/player")
 @onready var animated_sprite = $AnimatedSprite2D
+
 var movement = Vector2.ZERO
 var character_position = Vector2.ZERO
+
 var timer = 0
 var seated = false
 
@@ -34,7 +36,6 @@ func index():
 		z_index = 1
 	if position.y < player_position.y:
 		z_index = 0
-	print(z_index)
 
 func animate():
 	if velocity.x == 0 and velocity.y == 0:

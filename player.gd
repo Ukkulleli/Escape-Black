@@ -6,7 +6,8 @@ const speed = 100
 
 var input = Vector2.ZERO
 var direction = "down"
-var attacking = false 
+var attacking = false
+var paused = false 
 
 func _ready():
 	# Signal für das Ende der Animation verbinden
@@ -22,7 +23,8 @@ func _physics_process(delta):
 		velocity = input * speed
 	else:
 		velocity = Vector2.ZERO
-	
+		
+		
 	# Wenn Leertaste gedrückt wird, und ma gerade nicht angreift, wird angegriffen
 	if Input.is_action_just_pressed("attack") and !attacking:
 		attack()
@@ -76,9 +78,8 @@ func play_idle():
 func _on_animation_finished():
 	attacking = false
 
-func test():
-	#get_tree().change_scene_to_file()
-	pass
+
+#get_tree().change_scene_to_file()
 
 func get_character_position() -> Vector2:
 	return self.position
