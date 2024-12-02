@@ -9,8 +9,11 @@ var direction = "down"
 var attacking = false
 var paused = false 
 
+#var inventory = Array([8], TYPE_STRING, "", null)
+
 func _ready():
 	# Signal für das Ende der Animation verbinden
+	get_tree().paused = false
 	animated_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
 func _physics_process(delta):
