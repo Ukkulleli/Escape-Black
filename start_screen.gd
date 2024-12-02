@@ -17,7 +17,7 @@ func _process(delta):
 		while progress <= 100:
 			progress_bar.value = progress
 			progress += 1
-			await get_tree().create_timer(0.01).timeout
-		
+			await get_tree().create_timer(0.05).timeout
+		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://node_2d.tscn")
 	
