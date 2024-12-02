@@ -9,6 +9,7 @@ var seated = false
 
 func _ready():
 	pass
+
 func _physics_process(delta):
 	#Erstellt einen Vektor, der in die Richtung des Spielers zeigt
 	movement = (player.get_character_position() - self.position)
@@ -22,11 +23,18 @@ func _physics_process(delta):
 	else:
 		velocity = Vector2.ZERO
 		timer += 1
-	print(timer)
-	
-	
+		
+	index()
 	animate()
 	move_and_slide()
+
+func index():
+	var player_position = player.get_character_position()
+	if position.y > player_position.y:
+		z_index = 1
+	if position.y < player_position.y:
+		z_index = 0
+	print(z_index)
 
 func animate():
 	if velocity.x == 0 and velocity.y == 0:
