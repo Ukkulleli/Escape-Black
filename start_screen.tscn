@@ -28,3 +28,9 @@ offset_right = 739.0
 offset_bottom = 416.0
 text = "Drücke Leertaste zum Spielen"
 horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 413.0
+offset_top = 424.0
+offset_right = 814.0
+offset_bottom = 454.0
