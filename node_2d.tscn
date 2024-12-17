@@ -1818,29 +1818,28 @@ polygon = PackedVector2Array(-638, -450, -640, 656, 134, 652, 134, 533, 1344, 53
 script = ExtResource("8_0af7g")
 
 [node name="ColorRect" type="ColorRect" parent="Pause Manager"]
-offset_left = -957.0
-offset_top = -642.0
-offset_right = 1723.0
-offset_bottom = 774.0
-color = Color(0.427451, 0.486275, 0.423529, 1)
+offset_left = 1923.0
+offset_top = -11.0
+offset_right = 3076.0
+offset_bottom = 639.0
+color = Color(0.436921, 0.496652, 0.719135, 1)
 
 [node name="player" type="ColorRect" parent="Pause Manager"]
-offset_left = -285.0
-offset_top = 14.0
-offset_right = 5.0
-offset_bottom = 304.0
+offset_left = 1950.0
+offset_top = 21.0
+offset_right = 2186.0
+offset_bottom = 254.0
 color = Color(0.00392157, 0.00392157, 0.00392157, 0.760784)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Pause Manager/player"]
-position = Vector2(147, 135.848)
+position = Vector2(121, 123)
 scale = Vector2(4.5, 4.19225)
 sprite_frames = SubResource("SpriteFrames_x0isq")
 animation = &"idle"
 script = ExtResource("9_w74rr")
 
 [node name="Camera2D" type="Camera2D" parent="Pause Manager"]
-position = Vector2(337, 63)
-zoom = Vector2(0.8, 0.8)
+position = Vector2(2500, 314)
 
 [node name="Title" type="Label" parent="Pause Manager"]
 anchors_preset = 5
@@ -1857,64 +1856,11 @@ text = "Das Spiel ist pausiert"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button1" type="Button" parent="Pause Manager"]
-offset_left = 100.0
-offset_top = 20.0
-offset_right = 300.0
-offset_bottom = 220.0
-text = "Slot 1"
-
-[node name="Button2" type="Button" parent="Pause Manager"]
-offset_left = 325.0
-offset_top = 20.0
-offset_right = 525.0
-offset_bottom = 220.0
-text = "Slot 2
-"
-
-[node name="Button3" type="Button" parent="Pause Manager"]
-offset_left = 550.0
-offset_top = 20.0
-offset_right = 750.0
-offset_bottom = 220.0
-text = "Slot 3
-"
-
-[node name="Button4" type="Button" parent="Pause Manager"]
-offset_left = 775.0
-offset_top = 20.0
-offset_right = 975.0
-offset_bottom = 220.0
-text = "Slot 4
-"
-
-[node name="Button5" type="Button" parent="Pause Manager"]
-offset_left = 100.0
-offset_top = 250.0
-offset_right = 300.0
-offset_bottom = 450.0
-text = "Slot 5"
-
-[node name="Button6" type="Button" parent="Pause Manager"]
-offset_left = 325.0
-offset_top = 250.0
-offset_right = 525.0
-offset_bottom = 450.0
-text = "Slot 6"
-
-[node name="Button7" type="Button" parent="Pause Manager"]
-offset_left = 550.0
-offset_top = 250.0
-offset_right = 750.0
-offset_bottom = 450.0
-text = "Slot 7"
-
-[node name="Button8" type="Button" parent="Pause Manager"]
-offset_left = 775.0
-offset_top = 250.0
-offset_right = 975.0
-offset_bottom = 450.0
-text = "Slot 8"
+[node name="ItemList" type="ItemList" parent="Pause Manager"]
+offset_left = 2563.0
+offset_top = 24.0
+offset_right = 3041.0
+offset_bottom = 608.0
 
 [connection signal="animation_finished" from="player/AnimatedSprite2D" to="player" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="player/Area2D" to="player" method="_on_area_2d_area_entered"]
