@@ -49,3 +49,8 @@ func pause():
 		get_tree().paused = paused  # Spiel pausieren oder fortsetzen
 		if paused:
 			load_inventory()
+
+
+func _on_benutzen_button_pressed() -> void:
+	if item_list.is_selected():
+		pass

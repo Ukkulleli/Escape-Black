@@ -8,7 +8,7 @@ var input = Vector2.ZERO
 var direction = "down"
 var attacking = false
 var paused = false 
-var inventory = ["Apfel"]
+var inventory = ["Apfel", "Birne", "Zuchtstute"]
 #var inventory = Array([8], TYPE_STRING, "", null)
 
 func _ready():

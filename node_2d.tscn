@@ -1833,8 +1833,8 @@ script = ExtResource("8_0af7g")
 [node name="ColorRect" type="ColorRect" parent="Pause Manager"]
 offset_left = 1923.0
 offset_top = -11.0
-offset_right = 3076.0
-offset_bottom = 639.0
+offset_right = 2643.0
+offset_bottom = 394.0
 color = Color(0.180361, 0.216346, 0.361669, 1)
 
 [node name="player" type="ColorRect" parent="Pause Manager"]
@@ -1876,8 +1876,17 @@ vertical_alignment = 1
 offset_left = 2146.0
 offset_top = 117.0
 offset_right = 2493.0
-offset_bottom = 379.0
+offset_bottom = 370.0
 theme_override_font_sizes/font_size = 20
+
+[node name="Benutzen_Button" type="Button" parent="Pause Manager"]
+offset_left = 1972.0
+offset_top = 295.0
+offset_right = 2104.0
+offset_bottom = 354.0
+theme_override_font_sizes/font_size = 20
+text = "Benutzen"
 
 [connection signal="animation_finished" from="player/AnimatedSprite2D" to="player" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="player/Area2D" to="player" method="_on_area_2d_area_entered"]
+[connection signal="pressed" from="Pause Manager/Benutzen_Button" to="Pause Manager" method="_on_benutzen_button_pressed"]
