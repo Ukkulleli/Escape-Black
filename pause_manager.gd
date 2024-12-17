@@ -36,7 +36,7 @@ func load_inventory():
 	inventory = inv.inventory
 	item_list.clear()
 	if inventory.is_empty() == false:
-		print(inventory)
+		print("Inventar: ", inventory)
 		for item in inventory:
 			item_list.add_item(item)
 	else:
